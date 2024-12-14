@@ -1,0 +1,83 @@
+" Don't try to be vi compatible
+set nocompatible
+
+" Turn off before loading plugins, then back one later
+filetype off
+
+""" LOAD ANY PLUGINS HERE
+call plug#begin()
+Plug 'preservim/nerdcommenter'
+call plug#end()
+
+" Turn on syntax highlighting, line numbers, and of QOL features
+" syntax on
+" filetype plugin indent on
+" Invoked by default at end of VimPlug (https://github.com/junegunn/vim-plug?tab=readme-ov-file#usage)
+set number
+set nowrap
+set list
+set showbreak=↪\ \
+set listchars=tab:\ \ ,nbsp:␣,precedes:«,extends:»
+" Optional more aggressive modes:
+" set listchars=tab:→\ ,nbsp:␣,trail:·,precedes:«,extends:»,eol:¶
+" set listchars=tab:→\ ,space:␣,nbsp:·,trail:¬,precedes:«,extends:»,eol:↲
+
+" Change .viminfo location (https://vi.stackexchange.com/a/14358)
+set viminfo+=n~/.vim/viminfo
+if has('nvim') | let &viminfo .= '.nvim' | endif
+
+" Configure the status bar
+set showmode
+" set showcm
+" set ruler
+" set laststatus=2
+
+" Configure tab behaviour
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+autocmd FileType make setlocal noexpandtab
+
+" Configure searching
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+" General configuration
+set hidden
+set backspace=indent,eol,start
+" set visualbell
+
+" Make shift+arrow keys select rather than jump
+" https://stackoverflow.com/a/47170991
+set keymodel=startsel
+
+" Make cursor turn to line in insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" https://stackoverflow.com/a/48690620
+nmap <C-_> <leader>c<Space>
+vmap <C-_> <leader>c<Space>
+
+" In vimdiff mode, set some additional keybindings, and wrap text by default
+noremap <expr> <C-A> &diff ? ':qa!<cr>' : ''
+noremap <expr> <C-S> &diff ? ':wqa!<cr>' : ''
+noremap <expr> <C-Q> &diff ? ':cq!<cr>' : ''
+au VimEnter * if &diff | execute 'windo set wrap' | endif
+
+" Don't lose selection when indenting/dedenting
+" (https://superuser.com/a/623133)
+vnoremap < <gv
+vnoremap > >gv
+
+" This unsets the 'last search pattern' register by hitting return
+" https://stackoverflow.com/a/662914
+nnoremap <CR> :noh<CR><CR>
+
+" Set the colour scheme
+colorscheme monokai
+

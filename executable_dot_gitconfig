@@ -1,0 +1,51 @@
+[user]
+    email = egoodman3141@gmail.com
+    name = EdmundGoodman
+[alias]
+    tree = log --all --decorate --oneline --graph --date=short
+    compare = log --oneline --graph --decorate
+    conflicts = "!f() { git diff -S \"<<<<<<< HEAD\" -S \"=======\" -S \">>>>>>> $(git name-rev --name-only MERGE_HEAD)\" HEAD; }; f"
+    diffv = difftool -t vimdiff
+    #diffp = diff --word-diff-color
+    diffpy = difftool -t pycharm
+    forcepush = push --force-with-lease
+    # forcepull = "!git fetch --all && git reset --hard origin/main"
+    ## https://codewithhugo.com/change-the-date-of-a-git-commit/
+    redate = "!f() { GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --no-edit --date \"$(date)\"; }; f"
+
+[pager]
+    branch = false
+[init]
+    defaultBranch = main
+[credential]
+    helper = store
+[push]
+    autoSetupRemote = true
+
+[mergetool]
+    prompt = false
+[difftool]
+    trustExitCode = true
+    prompt = false
+
+[difftool "pycharm"]
+    cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm diff "$LOCAL" "$REMOTE" 2>&-
+[mergetool "pycharm"]
+    cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm "$LOCAL" "$REMOTE" "$BASE" "$MERGED" 2>&-
+    keepBackup = false
+
+## https://blog.martinfenner.org/posts/using-microsoft-word-with-git
+#[diff "pandoc"]
+#    textconv = pandoc --to=markdown
+#    prompt = false
+#
+## https://nbdime.readthedocs.io/en/latest/
+#[diff "jupyternotebook"]
+#    command = git-nbdiffdriver diff
+#[merge "jupyternotebook"]
+#    driver = git-nbmergedriver merge %O %A %B %L %P
+#    name = jupyter notebook merge driver
+#[difftool "nbdime"]
+#    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+#[mergetool "nbdime"]
+#    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"

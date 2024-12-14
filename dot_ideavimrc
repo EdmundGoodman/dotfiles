@@ -1,0 +1,16 @@
+" https://www.cyberwizard.io/posts/the-ultimate-ideavim-setup/
+set scrolloff=10
+set showmode
+set showcmd
+set keymodel=startsel
+set backspace=indent,eol,start
+vnoremap < <gv
+vnoremap > >gv
+set clipboard+=unnamed
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set showmatch
+
