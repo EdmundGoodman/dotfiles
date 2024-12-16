@@ -17,8 +17,6 @@
     branch = false
 [init]
     defaultBranch = main
-[credential]
-    helper = store
 [push]
     autoSetupRemote = true
 
@@ -49,3 +47,7 @@
 #    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
 #[mergetool "nbdime"]
 #    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+#[credential]
+#    helper = store
+

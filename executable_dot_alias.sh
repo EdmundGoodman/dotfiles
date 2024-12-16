@@ -7,9 +7,6 @@ alias desktop="cd ~/Desktop"
 alias downloads="cd ~/Downloads"
 alias documents="cd ~/Documents"
 
-alias l50="ssh nf-test100"
-alias l50b="ssh nf-test111"
-
 #Aliases for ls
 alias ll="ls -alFh"
 alias la="ls -A"
@@ -40,6 +37,9 @@ alias firefox="open -a /Applications/Firefox.app"
 alias preview="open -a Preview"
 # Alias pycharm
 alias pycharm="open -a /Applications/PyCharm.app/Contents/MacOS/pycharm"
+## Alias and interactive Haskell repl 
+# alias ghci="stack exec -- ghci"
+
 
 
 # Alias listing mounted drives
@@ -63,7 +63,4 @@ fk() { kill -9 $(jobs -p | tr -d '+-' | awk '/suspend/{print $2}'); }
 alias tms="tmux new -As0"
 alias tmd="tmux detach"
 alias tmls="tmux ls"
-
-## Alias to run an interactive Haskell shell via stack, to avoid multiple GHC installs, without loading any packages
-# alias ghci="stack exec -- ghci"
 

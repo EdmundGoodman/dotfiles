@@ -74,6 +74,9 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 vnoremap < <gv
 vnoremap > >gv
 
+" Make the clipboard shared between vim and the system
+set clipboard+=unnamed
+
 " This unsets the 'last search pattern' register by hitting return
 " https://stackoverflow.com/a/662914
 nnoremap <CR> :noh<CR><CR>
