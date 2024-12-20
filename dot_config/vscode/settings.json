@@ -21,17 +21,45 @@
     "editor.wordWrap": "off",
     "editor.minimap.renderCharacters": false,
     "editor.linkedEditing": true,
-    "editor.lineNumbers": "on",
-    "editor.wordWrap": "off",
     "editor.acceptSuggestionOnEnter": "off",
     "explorer.confirmDragAndDrop": false,
     "git.openRepositoryInParentFolders": "never",
-
     "workbench.startupEditor": "none",
-    // "workbench.colorTheme": "Github Light Theme",
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "material-icon-theme",
 
+    // General appearance settings
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.hideCursorInOverviewRuler": true,
+    "workbench.colorCustomizations": {
+        // Since we have the minimap, these are duplicated
+        // https://github.com/microsoft/vscode/issues/85418
+        "editorOverviewRuler.addedForeground": "#0000",
+        "editorOverviewRuler.bracketMatchForeground": "#0000",
+        "editorOverviewRuler.commentForeground": "#0000",
+        "editorOverviewRuler.commentUnresolvedForeground": "#0000",
+        "editorOverviewRuler.commonContentForeground": "#0000",
+        "editorOverviewRuler.currentContentForeground": "#0000",
+        "editorOverviewRuler.deletedForeground": "#0000",
+        "editorOverviewRuler.incomingContentForeground": "#0000",
+        "editorOverviewRuler.inlineChatInserted": "#0000",
+        "editorOverviewRuler.inlineChatRemoved": "#0000",
+        "editorOverviewRuler.modifiedForeground": "#0000",
+        "editorOverviewRuler.rangeHighlightForeground": "#0000",
+        "editorOverviewRuler.selectionHighlightForeground": "#0000",
+        "editorOverviewRuler.wordHighlightForeground": "#0000",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
+        "editorOverviewRuler.wordHighlightTextForeground": "#0000",
+        // May optionally want to keep these:
+        "editorOverviewRuler.findMatchForeground": "#0000",
+        "editorOverviewRuler.errorForeground": "#0000",
+        "editorOverviewRuler.warningForeground": "#0000",
+        "editorOverviewRuler.infoForeground": "#0000",
+    },
+    // Light (writing) theme
+    // "workbench.colorTheme": "Absent Light (rainglow)",
+    // "editor.minimap.enabled": false,
+    // Dark (coding) theme
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.minimap.enabled": true,
 
     // https://www.roboleary.net/vscode/2020/08/05/dont-need-extensions.html
     "files.trimFinalNewlines": true,
@@ -50,6 +78,7 @@
     },
     "[yaml]": {
         "editor.tabSize": 2,
+        "editor.detectIndentation": false
     },
     "[makefile]": {
         "editor.insertSpaces": false,
@@ -62,6 +91,9 @@
     "python.analysis.autoFormatStrings": true,
     "editor.defaultFormatter": "charliermarsh.ruff",
     "files.exclude": {
+        // Git
+        "**/.git": true,
+        // Python
         "**/__pycache__": true,
         "**/.cache": true,
         "**/.coverage": true,
@@ -71,7 +103,33 @@
         "**/.nox": true,
         "**/.pytest_cache": true,
         "**/.ruff_cache": true,
-        "**/.tox": true
+        "**/.tox": true,
+        // LaTeX
+		"**/*.aux": true,
+		"**/*.bbl": true,
+		"**/*.bcf": true,
+		"**/*.blg": true,
+		"**/*.fdb_latexmk": true,
+		"**/*.fls": true,
+		"**/*.glg": true,
+		"**/*.glo": true,
+		"**/*.gls": true,
+		"**/*.glsdefs": true,
+		"**/*.idx": true,
+		"**/*.ilg": true,
+		"**/*.ind": true,
+		"**/*.lof": true,
+		"**/*.log": true,
+		"**/*.lot": true,
+		"**/*.mw": true,
+		"**/*.nlo": true,
+		"**/*.nls": true,
+		"**/*.out": true,
+		"**/*.run.xml": true,
+		"**/*.synctex.gz": true,
+		"**/*.thm": true,
+		"**/*.toc": true,
+		"**/*.xdy": true
     },
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
@@ -80,15 +138,35 @@
 
 
     // Extension configuration
+    // Makefiles
     "makefile.configureAfterCommand": false,
     "makefile.configureOnEdit": false,
     "makefile.configureOnOpen": false,
     "makefile.buildBeforeLaunch": false,
     "makefile.clearOutputBeforeBuild": false,
+    // Python docstrings
     "autoDocstring.docstringFormat": "google",
     "autoDocstring.generateDocstringOnEnter": true,
     "autoDocstring.guessTypes": false,
+    // Vim
     "vim.vimrc.enable": true,
     "vim.startInInsertMode": true,
+    // LaTeX & BibTeX
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "[bibtex]": {
+      "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    // https://valentjn.github.io/ltex/settings.html
+    // https://alexanderzeilmann.de/blog/my-latex-workflow/spell-checking
+    "ltex.language": "en-GB",
+    "ltex.additionalRules.motherTongue": "en-GB",
+    "ltex.additionalRules.enablePickyRules": true,
+    "ltex.dictionary": {
+	    "en-GB": [":/Users/edjg/.config/vscode/LTeX/dictionary.txt"]
+    },
+    "ltex.configurationTarget": {
+        "dictionary": "userExternalFile"
+    },
 }
 

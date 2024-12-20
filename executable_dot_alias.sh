@@ -24,6 +24,7 @@ alias icat="imgcat"
 # Pipe to clipboard
 alias clipboard="pbcopy"
 alias cb="pbcopy"
+alias ripgrep="rg"
 
 # Alias neofetch
 alias neofetch="fastfetch"
@@ -39,8 +40,6 @@ alias preview="open -a Preview"
 alias pycharm="open -a /Applications/PyCharm.app/Contents/MacOS/pycharm"
 ## Alias and interactive Haskell repl 
 # alias ghci="stack exec -- ghci"
-
-
 
 # Alias listing mounted drives
 alias lsmnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
