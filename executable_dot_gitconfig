@@ -1,17 +1,27 @@
 [user]
     email = egoodman3141@gmail.com
     name = EdmundGoodman
+	signingkey = ~/.ssh/id_ed25519_github.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+
 [alias]
     tree = log --all --decorate --oneline --graph --date=short
     compare = log --oneline --graph --decorate
     conflicts = "!f() { git diff -S \"<<<<<<< HEAD\" -S \"=======\" -S \">>>>>>> $(git name-rev --name-only MERGE_HEAD)\" HEAD; }; f"
     diffv = difftool -t vimdiff
     #diffp = diff --word-diff-color
-    diffpy = difftool -t pycharm
+    diffidea = difftool -t pycharm
     forcepush = push --force-with-lease
     # forcepull = "!git fetch --all && git reset --hard origin/main"
     ## https://codewithhugo.com/change-the-date-of-a-git-commit/
     redate = "!f() { GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --no-edit --date \"$(date)\"; }; f"
+    ## https://stackoverflow.com/a/278242
+    history = log -p --
 
 [pager]
     branch = false
@@ -50,4 +60,7 @@
 
 #[credential]
 #    helper = store
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 
