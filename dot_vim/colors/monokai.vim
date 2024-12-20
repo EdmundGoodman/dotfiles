@@ -1,5 +1,5 @@
-" Cloned from https://github.com/ku1ik/vim-monokai under the following
-" license:
+" Cloned from https://github.com/ku1ik/vim-monokai under the following license:
+"
 " > The MIT License (MIT)
 " >
 " > Copyright (c) 2009-2016 Marcin Kulik
