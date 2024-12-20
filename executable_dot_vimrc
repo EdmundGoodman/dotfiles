@@ -15,9 +15,11 @@ call plug#end()
 " Invoked by default at end of VimPlug (https://github.com/junegunn/vim-plug?tab=readme-ov-file#usage)
 set number
 set nowrap
-set list
-set showbreak=↪\ \
-set listchars=tab:\ \ ,nbsp:␣,precedes:«,extends:»
+
+" Show
+" set list
+" set showbreak=↪\ \
+" set listchars=tab:\ \ ,nbsp:␣,precedes:«,extends:»
 " Optional more aggressive modes:
 " set listchars=tab:→\ ,nbsp:␣,trail:·,precedes:«,extends:»,eol:¶
 " set listchars=tab:→\ ,space:␣,nbsp:·,trail:¬,precedes:«,extends:»,eol:↲
@@ -75,7 +77,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Make the clipboard shared between vim and the system
-set clipboard+=unnamed
+" set clipboard+=unnamed
 
 " This unsets the 'last search pattern' register by hitting return
 " https://stackoverflow.com/a/662914
