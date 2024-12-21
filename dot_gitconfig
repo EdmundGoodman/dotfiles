@@ -22,7 +22,6 @@
     redate = "!f() { GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --no-edit --date \"$(date)\"; }; f"
     ## https://stackoverflow.com/a/278242
     history = log -p --
-
 [pager]
     branch = false
 [init]
@@ -30,12 +29,14 @@
 [push]
     autoSetupRemote = true
 
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
 [mergetool]
     prompt = false
 [difftool]
     trustExitCode = true
     prompt = false
-
 [difftool "pycharm"]
     cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm diff "$LOCAL" "$REMOTE" 2>&-
 [mergetool "pycharm"]
@@ -60,7 +61,4 @@
 
 #[credential]
 #    helper = store
-
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
 
