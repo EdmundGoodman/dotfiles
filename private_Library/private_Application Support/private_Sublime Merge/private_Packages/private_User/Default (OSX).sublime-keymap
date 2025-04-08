@@ -1,0 +1,18 @@
+[
+    {
+        "keys": ["super+alt+down"], "command": "next_conflict",
+        "context": [{"operator": "equal", "key": "merge_mode"}]
+    },
+    {
+        "keys": ["super+alt+up"], "command": "prev_conflict",
+        "context": [{"operator": "equal", "key": "merge_mode"}]
+    },
+    {
+        "keys": ["super+alt+right"], "command": "use_left_hunk",
+        "context": [{"operator": "equal", "key": "merge_mode"}]
+    },
+    {
+        "keys": ["super+alt+left"], "command": "use_right_hunk",
+        "context": [{"operator": "equal", "key": "merge_mode"}]
+    },
+]

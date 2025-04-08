@@ -1,0 +1,12 @@
+/* https://www.reddit.com/r/MacOS/comments/pz9vnu/comment/iqn3acw/ */
+{
+    "\UF729" = "moveToBeginningOfLine:";
+    "\UF72B" = "moveToEndOfLine:";
+    "$\UF729" = moveToBeginningOfLineAndModifySelection:; // shift-home
+    "$\UF72B" = moveToEndOfLineAndModifySelection:; // shift-end
+    "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
+    "^\UF72B" = moveToEndOfDocument:; // ctrl-end
+    "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
+    "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+    "~ " = (insertText:, " "); // disable non-breaking space https://apple.stackexchange.com/a/34673
+}
